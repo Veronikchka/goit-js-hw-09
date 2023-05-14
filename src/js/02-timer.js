@@ -68,8 +68,10 @@ function onStartClick() {
     refs.hoursEl.textContent = time.hours;
     refs.minutesEl.textContent = time.minutes;
     refs.secondsEl.textContent = time.seconds;
+    refs.startBtn.disabled = true; 
     if (ms < 1000) {
       clearInterval(intervalId);
+       refs.startBtn.disabled = false;
     }
   }, 1000);
 }
@@ -77,3 +79,4 @@ function onStartClick() {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
+
